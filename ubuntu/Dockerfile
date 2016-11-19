@@ -8,7 +8,8 @@ RUN apt-get install -y \
 		curl \
 		openssl \
                 openssh-server openssh-client \
-                docker.io docker-compose
+                docker.io docker-compose \
+                dmsetup
 
 
 # Install the magic wrapper.
@@ -17,4 +18,5 @@ RUN chmod +x /usr/local/bin/wrapdocker
 
 # Define additional metadata for our image.
 VOLUME /var/lib/docker
+EXPOSE 22
 CMD ["wrapdocker"]
